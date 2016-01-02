@@ -36,7 +36,7 @@ create_release() {
 
   payload="{$payload}";
 
-  curl --fail -s -S -X POST https://api.github.com/repos/$owner/$repo/releases \
+  curl -i --fail -s -S -X POST https://api.github.com/repos/$owner/$repo/releases \
     -A "wercker-create-release" \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $token" \
